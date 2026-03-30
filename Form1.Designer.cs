@@ -33,15 +33,17 @@
             label1 = new Label();
             textBox1 = new TextBox();
             labelCount = new Label();
+            btnDelHistory = new Button();
+            btnDeleteSelected = new Button();
             SuspendLayout();
             // 
             // btnSend
             // 
             btnSend.BackColor = Color.Chartreuse;
             btnSend.Font = new Font("맑은 고딕", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            btnSend.Location = new Point(603, 342);
+            btnSend.Location = new Point(603, 374);
             btnSend.Name = "btnSend";
-            btnSend.Size = new Size(146, 78);
+            btnSend.Size = new Size(146, 53);
             btnSend.TabIndex = 0;
             btnSend.Text = "전송";
             btnSend.UseVisualStyleBackColor = false;
@@ -71,20 +73,47 @@
             // textBox1
             // 
             textBox1.Font = new Font("맑은 고딕", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            textBox1.Location = new Point(34, 367);
+            textBox1.Location = new Point(34, 374);
+            textBox1.MaxLength = 50;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(541, 35);
+            textBox1.Size = new Size(550, 35);
             textBox1.TabIndex = 4;
+            textBox1.KeyDown += textBox1_KeyDown;
             // 
             // labelCount
             // 
             labelCount.AutoSize = true;
             labelCount.Font = new Font("맑은 고딕", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            labelCount.Location = new Point(592, 48);
+            labelCount.Location = new Point(581, 14);
             labelCount.Name = "labelCount";
             labelCount.Size = new Size(128, 30);
             labelCount.TabIndex = 5;
             labelCount.Text = "메시지 수: 0";
+            // 
+            // btnDelHistory
+            // 
+            btnDelHistory.BackColor = Color.NavajoWhite;
+            btnDelHistory.Font = new Font("맑은 고딕", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            btnDelHistory.Location = new Point(581, 49);
+            btnDelHistory.Name = "btnDelHistory";
+            btnDelHistory.Size = new Size(168, 36);
+            btnDelHistory.TabIndex = 6;
+            btnDelHistory.Text = "대화 기록 삭제";
+            btnDelHistory.TextAlign = ContentAlignment.MiddleLeft;
+            btnDelHistory.UseVisualStyleBackColor = false;
+            btnDelHistory.Click += btnDelHistory_Click;
+            // 
+            // btnDeleteSelected
+            // 
+            btnDeleteSelected.BackColor = Color.LightCoral;
+            btnDeleteSelected.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            btnDeleteSelected.Location = new Point(603, 326);
+            btnDeleteSelected.Name = "btnDeleteSelected";
+            btnDeleteSelected.Size = new Size(146, 42);
+            btnDeleteSelected.TabIndex = 7;
+            btnDeleteSelected.Text = "삭제";
+            btnDeleteSelected.UseVisualStyleBackColor = false;
+            btnDeleteSelected.Click += btnDeleteSelected_Click;
             // 
             // Form1
             // 
@@ -93,6 +122,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Cornsilk;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnDeleteSelected);
+            Controls.Add(btnDelHistory);
             Controls.Add(labelCount);
             Controls.Add(textBox1);
             Controls.Add(label1);
@@ -111,5 +142,7 @@
         private Label label1;
         private TextBox textBox1;
         private Label labelCount;
+        private Button btnDelHistory;
+        private Button btnDeleteSelected;
     }
 }
