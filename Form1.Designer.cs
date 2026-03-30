@@ -32,6 +32,7 @@
             listBox1 = new ListBox();
             label1 = new Label();
             textBox1 = new TextBox();
+            labelCount = new Label();
             SuspendLayout();
             // 
             // btnSend
@@ -50,7 +51,6 @@
             // 
             listBox1.Font = new Font("맑은 고딕", 20.25F);
             listBox1.FormattingEnabled = true;
-            listBox1.Items.AddRange(new object[] { "첫번째 줄", "두번째 줄", "세번째 줄" });
             listBox1.Location = new Point(34, 93);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(715, 226);
@@ -75,15 +75,25 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(541, 35);
             textBox1.TabIndex = 4;
-            textBox1.Text = "여기에 메시지 입력하세요";
-            textBox1.KeyDown += textBox1_KeyDown;
+            // 
+            // labelCount
+            // 
+            labelCount.AutoSize = true;
+            labelCount.Font = new Font("맑은 고딕", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            labelCount.Location = new Point(592, 48);
+            labelCount.Name = "labelCount";
+            labelCount.Size = new Size(128, 30);
+            labelCount.TabIndex = 5;
+            labelCount.Text = "메시지 수: 0";
             // 
             // Form1
             // 
+            AcceptButton = btnSend;
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Cornsilk;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelCount);
             Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(listBox1);
@@ -100,5 +110,6 @@
         private ListBox listBox1;
         private Label label1;
         private TextBox textBox1;
+        private Label labelCount;
     }
 }
